@@ -79,6 +79,7 @@ git clone <repo-url>
 composer install
 cp .env.example .env
 php artisan migrate
+php artisan db:seed --class=UserSeeder
 php artisan queue:work
 php artisan serve
 ```
