@@ -67,8 +67,9 @@ class CollectOsintJob implements ShouldQueue
         }
         $target->update(['status' => 'collected']);
 
-        dispatch(new VerifyFindingsJob($target->id));
+       
         dispatch(new RunCorrelationJob($target->id));
+        dispatch(new VerifyFindingsJob($target->id));
     }
 
 
